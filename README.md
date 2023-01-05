@@ -27,6 +27,10 @@ Brief
     - When user hovers over the cell, change cell colour
     - When a 3 in a row occurs, grey out other non-winning cells
 
+### Wireframe
+
+![Wireframe for index.html](/images/Index.png)
+
 ### User Stories:
 
 - As a user, I should be able to start a new tic tac toe game
