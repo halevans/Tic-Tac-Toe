@@ -11,8 +11,7 @@ function init() {
     
     // Setup event listeners
     newGameBtn.addEventListener("click", e => newGame(tiles));
-    //resetScoresBtn.addEventListener("click", e => location.reload());
-    resetScoresBtn.addEventListener("click", checkWin);
+    resetScoresBtn.addEventListener("click", e => location.reload());
     tiles.forEach(element => {
         element.addEventListener("click", e => tileChange(e.target));
     });
@@ -31,6 +30,7 @@ function tileChange(tileDiv) {
         tileDiv.classList.remove("empty");
         tileDiv.classList.add(whichPlayerTurn());
         numberOfMoves += 1;
+        checkWin();
     } else return
 }
 
@@ -72,11 +72,14 @@ function checkWin() {
 
         function comboChecker(playerIcon) {
             if (tile1.classList.contains(playerIcon) && tile2.classList.contains(playerIcon) && tile3.classList.contains(playerIcon)) {
-                console.log(playerIcon)
+                return true;
             }
         }
         
-        comboChecker("X")
-        comboChecker("O")
+        if (comboChecker("X")) {
+            console.log("X")
+        } else if (comboChecker("O")) {
+            console.log("O")
+        } else return
     });
 }
