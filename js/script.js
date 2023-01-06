@@ -12,7 +12,7 @@ function init() {
     newGameBtn.addEventListener("click", e => console.log(e))
     resetScoresBtn.addEventListener("click", e => console.log(e))
     tiles.forEach(element => {
-        element.addEventListener("click", e => tileChange(e.target.id));
+        element.addEventListener("click", e => tileChange(e.target));
     });
 }
 
@@ -20,6 +20,8 @@ function init() {
 init();
 
 // Helper functions
-function tileChange(tileID) {
-    console.log(tileID);
+function tileChange(tileNumber) {
+    tileNumber.innerHTML = "X"
+    tileNumber.classList.remove("empty");
+    tileNumber.classList.add("X");
 }

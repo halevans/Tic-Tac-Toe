@@ -38,6 +38,7 @@ section {
     align-items: center;
     width: 100px;
     height: 100px;
+    font-size: xxx-large;
     color: white;
     background-color: black;
     transition-duration: 0.15s;
@@ -62,4 +63,12 @@ section {
 
 p {
     text-align: center;
+}
+
+.X {
+    background-color: navy;
+}
+
+.O {
+    background-color: pink;
 }
