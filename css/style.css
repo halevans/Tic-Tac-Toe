@@ -4,9 +4,25 @@ body {
     justify-content: center;
     align-items: center;
     background-color: black;
+    color: white;
 }
 
-#board {
+section{
+    display: flex;
+    flex-direction: column;
+}
+
+.game-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button {
+    width: 100px;
+}
+
+.board {
     display: grid;
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
@@ -23,8 +39,4 @@ body {
     height: 100px;
     color: white;
     background-color: black;
-}
-
-h1 {
-    color: white;
 }
