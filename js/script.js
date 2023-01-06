@@ -9,8 +9,8 @@ function init() {
     const tiles = document.querySelectorAll(".tile");
     
     // Setup event listeners
-    newGameBtn.addEventListener("click", e => console.log(e))
-    resetScoresBtn.addEventListener("click", e => console.log(e))
+    newGameBtn.addEventListener("click", e => location.reload())
+    resetScoresBtn.addEventListener("click", e => location.reload())
     tiles.forEach(element => {
         element.addEventListener("click", e => tileChange(e.target));
     });
@@ -20,12 +20,13 @@ function init() {
 init();
 
 // Helper functions
-function tileChange(tileNumber) {
-    tileNumber.innerHTML = whichPlayerTurn();
-    tileNumber.classList.remove("empty");
-    tileNumber.classList.add(whichPlayerTurn());
-    console.log(whichPlayerTurn());
-    numberOfMoves += 1;
+function tileChange(tileDiv) {
+    if (tileDiv.classList.contains("empty")) {
+        tileDiv.innerHTML = whichPlayerTurn();
+        tileDiv.classList.remove("empty");
+        tileDiv.classList.add(whichPlayerTurn());
+        numberOfMoves += 1;
+    } else return
 }
 
 function whichPlayerTurn() {
