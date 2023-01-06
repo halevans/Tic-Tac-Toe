@@ -29,8 +29,8 @@ function tileChange(tileDiv) {
         tileDiv.innerHTML = whichPlayerTurn();
         tileDiv.classList.remove("empty");
         tileDiv.classList.add(whichPlayerTurn());
-        numberOfMoves += 1;
         checkWin();
+        numberOfMoves += 1;
     } else return
 }
 
@@ -76,10 +76,8 @@ function checkWin() {
             }
         }
         
-        if (comboChecker("X")) {
-            console.log("X")
-        } else if (comboChecker("O")) {
-            console.log("O")
-        } else return
+        if (comboChecker(whichPlayerTurn())) {
+            alert(`Player ${whichPlayerTurn()} wins!`)
+        }
     });
 }
