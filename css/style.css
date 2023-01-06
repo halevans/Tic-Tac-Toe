@@ -32,7 +32,7 @@ section {
     background-color: white;
 }
 
-.square {
+.tile {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +43,7 @@ section {
     transition-duration: 0.15s;
 }
 
-.square:hover {
+.tile:hover {
     background-color: rgb(40, 40, 40);
 }
 
