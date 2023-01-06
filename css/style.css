@@ -7,7 +7,7 @@ body {
     color: white;
 }
 
-section{
+section {
     display: flex;
     flex-direction: column;
 }
@@ -16,6 +16,7 @@ section{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin: 10px;
 }
 
 .button {
@@ -39,4 +40,18 @@ section{
     height: 100px;
     color: white;
     background-color: black;
+}
+
+.message-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
 }
