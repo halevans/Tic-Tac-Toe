@@ -40,6 +40,11 @@ section {
     height: 100px;
     color: white;
     background-color: black;
+    transition-duration: 0.15s;
+}
+
+.square:hover {
+    background-color: rgb(40, 40, 40);
 }
 
 .message-section {
