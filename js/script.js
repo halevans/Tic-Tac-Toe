@@ -1,7 +1,7 @@
+let numberOfMoves = 0;
 
 function init() {
     console.log("Welcome to Tic Tac Toe");
-    let currentPlayer = "x";
 
     // Setup document elements
     const newGameBtn = document.querySelector("#new-game");
@@ -21,7 +21,17 @@ init();
 
 // Helper functions
 function tileChange(tileNumber) {
-    tileNumber.innerHTML = "X"
+    tileNumber.innerHTML = whichPlayerTurn();
     tileNumber.classList.remove("empty");
-    tileNumber.classList.add("X");
+    tileNumber.classList.add(whichPlayerTurn());
+    console.log(whichPlayerTurn());
+    numberOfMoves += 1;
+}
+
+function whichPlayerTurn() {
+    if(numberOfMoves % 2 === 0) {
+        return "X";
+    } else {
+        return "O";
+    }
 }
