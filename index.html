@@ -11,8 +11,8 @@
     <h1>Tic-Tac-Toe</h1>
     <section>
         <div class="game-buttons">
-            <div class="button" id="new-game">New Game</div>
-            <div class="button" id="reset-score">Reset Score</div>
+            <button type="button" id="new-game">New Game</button>
+            <button class="reset" id="reset-scores">Reset Scores</button>
         </div>
         <div class="board">
             <div class="square" id="1">1</div>
@@ -29,9 +29,18 @@
             User Messages
         </div>
         <div class="scores">
-            <div id="player-1-score">Player 1 score</div>
-            <div id="tie-score">Tie score</div>
-            <div id="player-2-score">Player 2 score</div>
+            <div>
+                <p>Player 1 score:</p>
+                <p id="player-1-score">0</p>
+            </div>
+            <div>
+                <p>Tie score:</p>
+                <p id="tie-score">0</p>
+            </div>
+            <div>
+                <p>Player 2 score:</p>
+                <p id="player-2-score">0</p>
+            </div>
         </div>
     </section>
     <script src="./js/script.js"></script>
