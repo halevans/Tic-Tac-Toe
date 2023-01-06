@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: black;
 }
 
 #board {
@@ -10,6 +11,8 @@ body {
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
+    gap: 5px;
+    background-color: white;
 }
 
 .square {
@@ -18,4 +21,10 @@ body {
     align-items: center;
     width: 100px;
     height: 100px;
+    color: white;
+    background-color: black;
+}
+
+h1 {
+    color: white;
 }
