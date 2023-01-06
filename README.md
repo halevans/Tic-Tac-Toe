@@ -34,13 +34,10 @@ Brief
 ### Psuedocode
 
 - Class of TicTacToe
-
     - New game method
     - Reset method
 
-
 - Function Init() to initialise game:
-
     - Create constants for the queryselectors
     - Create a new class of TicTacToe
 
@@ -50,7 +47,6 @@ Brief
     4 | 5 | 6  
     \--------  
     7 | 8 | 9  
-
 
 ### User Stories:
 
