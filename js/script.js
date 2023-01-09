@@ -85,6 +85,9 @@ function checkWin() {
             userMessages.innerHTML = `Player ${whichPlayerTurn()} wins!`;
             updateScore(whichPlayerTurn());
             gameOver = true;
+            tile1.classList.add("winning-tile");
+            tile2.classList.add("winning-tile");
+            tile3.classList.add("winning-tile");
         }
     });
 

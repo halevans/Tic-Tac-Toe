@@ -1,3 +1,5 @@
+
+
 body {
     display: flex;
     flex-direction: column;
@@ -5,6 +7,10 @@ body {
     align-items: center;
     background-color: black;
     color: white;
+    font-family: 'VT323', monospace;
+    /* decrease the contrast a bit, eliminate color fringing and make the font look a bit smoother: */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 section {
@@ -46,6 +52,7 @@ section {
 
 .empty:hover {
     background-color: rgb(40, 40, 40);
+    cursor: pointer;
 }
 
 .message-section {
@@ -71,4 +78,8 @@ p {
 
 .O {
     background-color: pink;
+}
+
+.winning-tile {
+    filter: brightness(200%);
 }
