@@ -1,7 +1,6 @@
 // Global variables
 let numberOfMoves;
-let playerXScore = 0;
-let playerOScore = 0;
+let gameOver = false;
 const userMessages = document.querySelector(".message-section p");
 
 function init() {
@@ -33,6 +32,7 @@ function tileChange(tileDiv) {
         tileDiv.classList.remove("empty");
         tileDiv.classList.add(whichPlayerTurn());
         checkWin();
+        updateMoveMessage(gameOver)
         numberOfMoves += 1;
     } else return
 }
@@ -48,11 +48,13 @@ function whichPlayerTurn() {
 
 // The newGame function resets the board, including the class of the tile divs and the innerHTML to blank
 function newGame(tiles) {
+    gameOver = false;
     numberOfMoves = 0;
     tiles.forEach(element => {
         element.classList = "tile empty";
         element.innerHTML = "";
     });
+    updateMoveMessage(whichPlayerTurn());
 }
 
 // The checkWin function checks to see whether the current selection on the board yields a win for a player
@@ -78,14 +80,17 @@ function checkWin() {
             alert(`Player ${whichPlayerTurn()} wins!`);
             userMessages.innerHTML = `Player ${whichPlayerTurn()} wins!`;
             updateScore(whichPlayerTurn());
-        // check if game is a draw
-        } else if (numberOfMoves === 8) {
-            updateScore("Tie");
-        // else return to game
-        } else return
+            gameOver = true;
+        }
     });
+    // check if game is a draw
+    if (numberOfMoves === 8) {
+        userMessages.innerHTML = `It's a Tie!`;
+        updateScore("Tie");
+    }
 }
 
+// The updateScore function increases the scores on the scoreboard depending who has won or tied
 function updateScore(player) {
     let scoreElement;
     if (player === "Tie") {
@@ -94,4 +99,13 @@ function updateScore(player) {
         scoreElement = document.querySelector(`#player-${player}-score`);
     }
     scoreElement.innerText = parseInt(scoreElement.innerText) + 1;
+}
+
+// This function updates the message the user sees regarding who's turn it is
+function updateMoveMessage(gameOver) {
+    if (gameOver) {
+        userMessages.innerHTML = `Player ${whichPlayerTurn()} wins!`;
+    } else {
+        userMessages.innerText = `Player ${whichPlayerTurn()}'s turn`;
+    }
 }
