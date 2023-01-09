@@ -79,7 +79,6 @@ function checkWin() {
 
         // check if the board has a winning combination as defined in winCombinations
         if (tile1.classList.contains(whichPlayerTurn()) && tile2.classList.contains(whichPlayerTurn()) && tile3.classList.contains(whichPlayerTurn())) {
-            alert(`Player ${whichPlayerTurn()} wins!`);
             userMessages.innerHTML = `Player ${whichPlayerTurn()} wins!`;
             updateScore(whichPlayerTurn());
             gameOver = true;
