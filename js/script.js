@@ -27,13 +27,15 @@ init();
 
 // Helper functions
 function tileChange(tileDiv) {
-    if (tileDiv.classList.contains("empty")) {
+    if (gameOver) {
+        return
+    } else if (tileDiv.classList.contains("empty")) {
         tileDiv.innerHTML = whichPlayerTurn();
         tileDiv.classList.remove("empty");
         tileDiv.classList.add(whichPlayerTurn());
         checkWin();
         numberOfMoves += 1;
-        updateMessage()
+        updateMessage();
     } else return
 }
 
@@ -83,7 +85,7 @@ function checkWin() {
             gameOver = true;
         }
     });
-    
+
     // check if game is a draw
     if (numberOfMoves === 8) {
         userMessages.innerHTML = `It's a Tie!`;
