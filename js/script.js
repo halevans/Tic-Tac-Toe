@@ -25,7 +25,10 @@ function init() {
 // Call the initialisation function to get everything setup
 init();
 
-// Helper functions
+// **********
+// Functions
+// **********
+
 function tileChange(tileDiv) {
     if (gameOver) {
         return
@@ -86,7 +89,7 @@ function checkWin() {
     });
 
     // check if game is a draw
-    if (numberOfMoves === 8) {
+    if (numberOfMoves === 8 && gameOver === false) {
         userMessages.innerHTML = `It's a Tie!`;
         updateScore("Tie");
         gameOver = true;
