@@ -18,6 +18,11 @@ section {
     flex-direction: column;
 }
 
+.score {
+    font-size: xxx-large;
+    margin: 0;
+}
+
 .game-buttons {
     display: flex;
     justify-content: space-around;
