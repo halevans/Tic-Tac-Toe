@@ -2,6 +2,7 @@
 let numberOfMoves;
 let gameOver = false;
 const userMessages = document.querySelector(".message-section p");
+const tiles = document.querySelectorAll(".tile");
 
 function init() {
     console.log("Welcome to Tic Tac Toe");
@@ -9,7 +10,6 @@ function init() {
     // Setup document elements
     const newGameBtn = document.querySelector("#new-game");
     const resetScoresBtn = document.querySelector("#reset-scores");
-    const tiles = document.querySelectorAll(".tile");
     
     // Setup event listeners
     newGameBtn.addEventListener("click", e => newGame(tiles));
@@ -19,7 +19,7 @@ function init() {
     });
     
     // Initialises a new game for the first time
-    newGame(tiles);
+    newGame();
 }
 
 // Call the initialisation function to get everything setup
@@ -52,7 +52,7 @@ function whichPlayerTurn() {
 }
 
 // The newGame function resets the board, including the class of the tile divs and the innerHTML to blank
-function newGame(tiles) {
+function newGame() {
     gameOver = false;
     numberOfMoves = 0;
     tiles.forEach(element => {
@@ -115,4 +115,8 @@ function updateMessage() {
     if (gameOver !== true) {
         userMessages.innerText = `Player ${whichPlayerTurn()}'s turn`;
     }
+}
+
+function setHoverText() {
+
 }
