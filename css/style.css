@@ -81,5 +81,10 @@ p {
 }
 
 .winning-tile {
-    filter: brightness(200%);
+    filter: brightness(120%);
+    animation: textgrow 1s infinite;
 }
+
+@keyframes textgrow {
+    50% {font-size: 80px;}
+  }
