@@ -80,6 +80,16 @@ p {
     background-color: pink;
 }
 
+.X-hover:hover:after {
+    opacity: 0.5;
+    content: "X";
+}
+
+.O-hover:hover:after {
+    opacity: 0.5;
+    content: "O";
+}
+
 .winning-tile {
     filter: brightness(120%);
     animation: textgrow 1s infinite;

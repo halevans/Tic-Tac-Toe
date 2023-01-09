@@ -12,7 +12,7 @@ function init() {
     const resetScoresBtn = document.querySelector("#reset-scores");
     
     // Setup event listeners
-    newGameBtn.addEventListener("click", e => newGame(tiles));
+    newGameBtn.addEventListener("click", e => newGame());
     resetScoresBtn.addEventListener("click", e => location.reload());
     tiles.forEach(element => {
         element.addEventListener("click", e => tileChange(e.target));
@@ -39,6 +39,7 @@ function tileChange(tileDiv) {
         checkWin();
         numberOfMoves += 1;
         updateMessage();
+        setHoverText();
     } else return
 }
 
@@ -60,6 +61,7 @@ function newGame() {
         element.innerHTML = "";
     });
     updateMessage();
+    setHoverText();
 }
 
 // The checkWin function checks to see whether the current selection on the board yields a win for a player or a tie
@@ -117,6 +119,15 @@ function updateMessage() {
     }
 }
 
+// This function sets the text inside the tiles when the mouse is hovered over a tile
 function setHoverText() {
-
+    tiles.forEach(tile => {
+        // remove any legacy X-hover or O-hover
+        tile.classList.remove("X-hover");
+        tile.classList.remove("O-hover");
+        // if tile is empty, add X-hover or O-hover
+        if (tile.classList.contains("empty")) {
+            tile.classList.add(`${whichPlayerTurn()}-hover`);
+        }
+    });
 }
