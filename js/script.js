@@ -1,5 +1,6 @@
 // Global variables
 let numberOfMoves;
+const userMessages = document.querySelector(".message-section p");
 
 function init() {
     console.log("Welcome to Tic Tac Toe");
@@ -69,19 +70,13 @@ function checkWin() {
         let tile1 = document.querySelector("#tile"+wincombo[0]);
         let tile2 = document.querySelector("#tile"+wincombo[1]);
         let tile3 = document.querySelector("#tile"+wincombo[2]);
+        console.log(numberOfMoves);
 
         if (tile1.classList.contains(whichPlayerTurn()) && tile2.classList.contains(whichPlayerTurn()) && tile3.classList.contains(whichPlayerTurn())) {
             alert(`Player ${whichPlayerTurn()} wins!`);
-        }
-
-        // function comboChecker(playerIcon) {
-        //     if (tile1.classList.contains(playerIcon) && tile2.classList.contains(playerIcon) && tile3.classList.contains(playerIcon)) {
-        //         return true;
-        //     }
-        // }
-        
-        // if (comboChecker(whichPlayerTurn())) {
-        //     alert(`Player ${whichPlayerTurn()} wins!`)
-        // }
+            userMessages.innerHTML = `Player ${whichPlayerTurn()} wins!`;
+        } else if (numberOfMoves === 8) {
+            alert(`It's a tie!`);
+        } else return
     });
 }
