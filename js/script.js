@@ -32,8 +32,8 @@ function tileChange(tileDiv) {
         tileDiv.classList.remove("empty");
         tileDiv.classList.add(whichPlayerTurn());
         checkWin();
-        updateMoveMessage(gameOver)
         numberOfMoves += 1;
+        updateMessage()
     } else return
 }
 
@@ -54,10 +54,10 @@ function newGame(tiles) {
         element.classList = "tile empty";
         element.innerHTML = "";
     });
-    updateMoveMessage(whichPlayerTurn());
+    updateMessage();
 }
 
-// The checkWin function checks to see whether the current selection on the board yields a win for a player
+// The checkWin function checks to see whether the current selection on the board yields a win for a player or a tie
 function checkWin() {
     const tiles = document.querySelectorAll(".tile");
 
@@ -83,10 +83,12 @@ function checkWin() {
             gameOver = true;
         }
     });
+    
     // check if game is a draw
     if (numberOfMoves === 8) {
         userMessages.innerHTML = `It's a Tie!`;
         updateScore("Tie");
+        gameOver = true;
     }
 }
 
@@ -102,10 +104,8 @@ function updateScore(player) {
 }
 
 // This function updates the message the user sees regarding who's turn it is
-function updateMoveMessage(gameOver) {
-    if (gameOver) {
-        userMessages.innerHTML = `Player ${whichPlayerTurn()} wins!`;
-    } else {
+function updateMessage() {
+    if (gameOver !== true) {
         userMessages.innerText = `Player ${whichPlayerTurn()}'s turn`;
     }
 }
