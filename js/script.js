@@ -1,5 +1,7 @@
 // Global variables
 let numberOfMoves;
+let playerXScore = 0;
+let playerOScore = 0;
 const userMessages = document.querySelector(".message-section p");
 
 function init() {
@@ -70,13 +72,26 @@ function checkWin() {
         let tile1 = document.querySelector("#tile"+wincombo[0]);
         let tile2 = document.querySelector("#tile"+wincombo[1]);
         let tile3 = document.querySelector("#tile"+wincombo[2]);
-        console.log(numberOfMoves);
 
+        // check if the board has a winning combination as defined in winCombinations
         if (tile1.classList.contains(whichPlayerTurn()) && tile2.classList.contains(whichPlayerTurn()) && tile3.classList.contains(whichPlayerTurn())) {
             alert(`Player ${whichPlayerTurn()} wins!`);
             userMessages.innerHTML = `Player ${whichPlayerTurn()} wins!`;
+            updateScore(whichPlayerTurn());
+        // check if game is a draw
         } else if (numberOfMoves === 8) {
-            alert(`It's a tie!`);
+            updateScore("Tie");
+        // else return to game
         } else return
     });
+}
+
+function updateScore(player) {
+    let scoreElement;
+    if (player === "Tie") {
+        scoreElement = document.querySelector("#tie-score");
+    } else {
+        scoreElement = document.querySelector(`#player-${player}-score`);
+    }
+    scoreElement.innerText = parseInt(scoreElement.innerText) + 1;
 }
