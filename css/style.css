@@ -1,5 +1,3 @@
-
-
 body {
     display: flex;
     flex-direction: column;
@@ -8,6 +6,7 @@ body {
     background-color: black;
     color: white;
     font-family: 'VT323', monospace;
+    margin: 0;
     /* decrease the contrast a bit, eliminate color fringing and make the font look a bit smoother: */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -16,6 +15,11 @@ body {
 section {
     display: flex;
     flex-direction: column;
+}
+
+.header-bar {
+    position: fixed;
+    top: 0;
 }
 
 .score {
@@ -35,6 +39,7 @@ section {
 }
 
 .board {
+    font-family: 'Indie Flower', cursive;
     display: grid;
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
