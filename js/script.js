@@ -1,8 +1,11 @@
 // Global variables
 let numberOfMoves;
+let muteBool = false;
 let gameOver = false;
 const userMessages = document.querySelector(".message-section p");
 const tiles = document.querySelectorAll(".tile");
+const muteBtn = document.querySelector("#mute");
+const muteBtnImage = document.querySelector("#mute-image");
 const tileClickAudio = new Audio("./audio/mixkit-video-game-retro-click-237.wav");
 const newGameAudio = new Audio("./audio/mixkit-click-melodic-tone-1129.wav");
 const winGameAudio = new Audio("./audio/mixkit-winning-notification-2018.wav");
@@ -20,9 +23,11 @@ function init() {
     tiles.forEach(element => {
         element.addEventListener("click", e => tileChange(e.target));
     });
+    muteBtn.addEventListener("click", e => mute());
     
     // Initialises a new game for the first time
     newGame();
+    mute() // remove later -- muting to avoid sounds playing all the time when building!
 }
 
 // Call the initialisation function to get everything setup
@@ -137,4 +142,21 @@ function setHoverText() {
             tile.classList.add(`${whichPlayerTurn()}-hover`);
         }
     });
+}
+
+// This function enables user to mute and unmute audio
+function mute() {
+    if(muteBool) {  
+        muteBtnImage.src = "./images/Vector-Sound-PNG-Image-File.png";
+        muteBool = false;
+        tileClickAudio.muted = false;
+        winGameAudio.muted = false;
+        newGameAudio.muted = false;
+    } else if (!muteBool) {
+        muteBtnImage.src = "./images/Sound-off-PNG-Clipart.png";
+        muteBool = true;
+        tileClickAudio.muted = true;
+        winGameAudio.muted = true;
+        newGameAudio.muted = true;
+    }
 }
