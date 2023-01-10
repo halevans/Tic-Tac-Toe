@@ -4,19 +4,25 @@ let muteBool = false;
 let gameOver = false;
 const userMessages = document.querySelector(".message-section p");
 const tiles = document.querySelectorAll(".tile");
+const newGameBtn = document.querySelector("#new-game");
+const resetScoresBtn = document.querySelector("#reset-scores");
 const muteBtn = document.querySelector("#mute");
 const muteBtnImage = document.querySelector("#mute-image");
-const tileClickAudio = new Audio("./audio/mixkit-video-game-retro-click-237.wav");
-const newGameAudio = new Audio("./audio/mixkit-click-melodic-tone-1129.wav");
-const winGameAudio = new Audio("./audio/mixkit-winning-notification-2018.wav");
+
+// audio files used
+const audioFiles = {
+    tileClickAudio: "./audio/mixkit-video-game-retro-click-237.wav",
+    newGameAudio: "./audio/mixkit-click-melodic-tone-1129.wav",
+    winGameAudio: "./audio/mixkit-winning-notification-2018.wav"
+}
+// loops through the audioFiles object and creates a variable for each key value pair
+Object.keys(audioFiles).forEach(element => {
+    this[element] = new Audio(audioFiles[element])
+});
 
 function init() {
     console.log("Welcome to Tic Tac Toe");
 
-    // Setup document elements
-    const newGameBtn = document.querySelector("#new-game");
-    const resetScoresBtn = document.querySelector("#reset-scores");
-    
     // Setup event listeners
     newGameBtn.addEventListener("click", e => newGame());
     resetScoresBtn.addEventListener("click", e => location.reload());
