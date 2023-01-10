@@ -84,7 +84,15 @@ section {
     width: 50px;
     height: 50px;
     border: solid white 2px;
-    border-radius: 20%;
+    border-radius: 15%;
+}
+
+#player-X-score {
+    background-color: rgb(55, 41, 72);
+}
+
+#player-O-score {
+    background-color: rgb(255, 202, 202);
 }
 
 p {
@@ -93,11 +101,11 @@ p {
 
 
 .X {
-    background-color: navy;
+    background-color: rgb(55, 41, 72);
 }
 
 .O {
-    background-color: pink;
+    background-color: rgb(255, 202, 202);
 }
 
 .X-hover:hover:after {
@@ -111,7 +119,7 @@ p {
 }
 
 .winning-tile {
-    filter: brightness(120%);
+    filter: brightness(110%);
     animation: textgrow 1s infinite;
 }
 
