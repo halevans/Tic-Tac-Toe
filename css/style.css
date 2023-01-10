@@ -74,7 +74,7 @@ img {
 }
 
 #mute:hover {
-    background-color: #7d7d7d;
+    background-color: #282828;
     color: black;
 }
 
@@ -101,7 +101,7 @@ img {
 }
 
 .empty:hover {
-    background-color: rgb(40, 40, 40);
+    background-color: #282828;
     cursor: pointer;
 }
 
