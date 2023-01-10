@@ -60,13 +60,13 @@ Brief
 
 ### Potential Extra Tic Tac Toe Features
 
-- [ ] Keep track of multiple game rounds with a win, lose and tie counter
+- [x] Keep track of multiple game rounds with a win, lose and tie counter
 - [ ] Allow players to customize their tokens (X, O, name, picture, etc)
 - [ ] Use localStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity
-- [ ] Involve Audio in your game
+- [x] Involve Audio in your game
 - [ ] Create an AI opponent: teach JavaScript to play an unbeatable game against you
 - [ ] Make your site fully responsive so that it is playable from a mobile phone
-- [ ] Get inventive with your styling e.g. use hover effects or animations
+- [x] Get inventive with your styling e.g. use hover effects or animations
 
 ### Super Potential Extra Tic Tac Toe Features
 
