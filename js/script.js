@@ -147,13 +147,13 @@ function setHoverText() {
 // This function enables user to mute and unmute audio
 function mute() {
     if(muteBool) {  
-        muteBtnImage.src = "./images/Vector-Sound-PNG-Image-File.png";
+        muteBtnImage.src = "./images/icons8-audio-100.png";
         muteBool = false;
         tileClickAudio.muted = false;
         winGameAudio.muted = false;
         newGameAudio.muted = false;
     } else if (!muteBool) {
-        muteBtnImage.src = "./images/Sound-off-PNG-Clipart.png";
+        muteBtnImage.src = "./images/icons8-mute-100.png";
         muteBool = true;
         tileClickAudio.muted = true;
         winGameAudio.muted = true;
