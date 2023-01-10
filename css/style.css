@@ -18,8 +18,7 @@ section {
 }
 
 .header-bar {
-    position: fixed;
-    top: 0;
+    width: 100%;
 }
 
 .score {
@@ -34,8 +33,34 @@ section {
     margin: 10px;
 }
 
-.button {
-    width: 100px;
+button {
+    display: inline-flex;
+    height: 40px;
+    width: 120px;
+    border: 2px solid #BFC0C0;
+    background-color: black;
+    color: #BFC0C0;
+    /* text-transform: uppercase; */
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+button:hover {
+    background-color: #BFC0C0;
+    color: black;
+}
+
+button:active {
+    background-color: black;
+    color: #BFC0C0;
+    box-shadow: 0 1px #666;
+    transform: translateY(1px);
 }
 
 .board {
@@ -57,7 +82,7 @@ section {
     font-size: xxx-large;
     color: white;
     background-color: black;
-    transition-duration: 0.15s;
+    transition-duration: 0.2s;
 }
 
 .empty:hover {
@@ -104,7 +129,6 @@ p {
     text-align: center;
 }
 
-
 .X {
     background-color: rgb(55, 41, 72);
 }
@@ -130,4 +154,4 @@ p {
 
 @keyframes textgrow {
     50% {font-size: 80px;}
-  }
+}
