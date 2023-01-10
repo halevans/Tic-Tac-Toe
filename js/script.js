@@ -85,8 +85,6 @@ function newGame() {
 
 // The checkWin function checks to see whether the current selection on the board yields a win for a player or a tie
 function checkWin() {
-    const tiles = document.querySelectorAll(".tile");
-
     const winCombinations = [
         // Rows
         [1, 2, 3], [4, 5, 6], [7, 8, 9],
