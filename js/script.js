@@ -1,4 +1,4 @@
-// Global variables
+// GLOBAL VARIABLES
 
 // Namespace object to organise changing global variables
 const game = {
@@ -21,21 +21,13 @@ const newGameBtn = document.querySelector("#new-game");
 const resetScoresBtn = document.querySelector("#reset-scores");
 const muteBtn = document.querySelector("#mute");
 const muteBtnImage = document.querySelector("#mute-image");
-// const audioFiles.tileClickAudio = new Audio("./audio/mixkit-video-game-retro-click-237.wav");
-// const audioFiles.newGameAudio = new Audio("./audio/mixkit-click-melodic-tone-1129.wav");
-// const audioFiles.winGameAudio = new Audio("./audio/mixkit-winning-notification-2018.wav");
 
-// audio files used
-// const audioFiles = {
-//     audioFiles.tileClickAudio: "./audio/mixkit-video-game-retro-click-237.wav",
-//     audioFiles.newGameAudio: "./audio/mixkit-click-melodic-tone-1129.wav",
-//     audioFiles.winGameAudio: "./audio/mixkit-winning-notification-2018.wav"
-// }
-// loops through the audioFiles object and creates a variable for each key value pair
-// Object.keys(audioFiles).forEach(element => {
-//     this[element] = new Audio(audioFiles[element])
-// });
+// INITIALISE APP
+init();
 
+// FUNCTIONS
+
+// Initialisation 
 function init() {
     console.log("Welcome to Tic Tac Toe");
 
@@ -51,15 +43,6 @@ function init() {
     newGame();
     mute() // remove later -- muting to avoid sounds playing all the time when building!
 }
-
-// Call the initialisation function to get everything setup
-init();
-
-/* 
-***************
-Functions
-***************
-*/
 
 // The tileChange function is where the main logic flow of the game occurs, when a tile is pressed
 function tileChange(tileDiv) {
