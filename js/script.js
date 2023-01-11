@@ -144,13 +144,12 @@ function setHoverText() {
         // remove any legacy X-hover or O-hover
         tile.classList.remove("X-hover");
         tile.classList.remove("O-hover");
-        // if tile is empty, add X-hover or O-hover
         if (!game.gameOver) {
             if (tile.classList.contains("empty")) {
-                tile.classList.add(`${whichPlayerTurn()}-hover`);
+                tile.classList.add(`${whichPlayerTurn()}-hover`); // if tile is empty, add X-hover or O-hover
             }
         } else if (game.gameOver) {
-            tile.classList.remove("empty");
+            tile.classList.remove("empty"); // if gameOver then remove empty class so hover effect no longer occurs
         }
     });
 }
