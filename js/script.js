@@ -104,6 +104,7 @@ function checkWin() {
             userMessages.innerHTML = `Player ${whichPlayerTurn()} wins!`;
             updateScore(whichPlayerTurn());
             game.gameOver = true;
+            // Makes winning tiles bulge
             tile1.classList.add("winning-tile");
             tile2.classList.add("winning-tile");
             tile3.classList.add("winning-tile");
@@ -144,8 +145,12 @@ function setHoverText() {
         tile.classList.remove("X-hover");
         tile.classList.remove("O-hover");
         // if tile is empty, add X-hover or O-hover
-        if (tile.classList.contains("empty")) {
-            tile.classList.add(`${whichPlayerTurn()}-hover`);
+        if (!game.gameOver) {
+            if (tile.classList.contains("empty")) {
+                tile.classList.add(`${whichPlayerTurn()}-hover`);
+            }
+        } else if (game.gameOver) {
+            tile.classList.remove("empty");
         }
     });
 }
