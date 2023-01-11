@@ -1,7 +1,15 @@
 // Global variables
-let numberOfMoves;
-let muteBool = false;
-let gameOver = false;
+
+// Namespace object to organise changing global variables
+const game = {
+    numberOfMoves: 0,
+    muteBool: false,
+    gameOver: false
+}
+
+// let game.numberOfMoves;
+// let game.muteBool = false;
+// let game.gameOver = false;
 const userMessages = document.querySelector(".message-section p");
 const tiles = document.querySelectorAll(".tile");
 const newGameBtn = document.querySelector("#new-game");
@@ -42,12 +50,14 @@ function init() {
 // Call the initialisation function to get everything setup
 init();
 
-// **********
-// Functions
-// **********
+/* 
+***************
+Functions
+***************
+ */
 
 function tileChange(tileDiv) {
-    if (gameOver) {
+    if (game.gameOver) {
         return
     } else if (tileDiv.classList.contains("empty")) {
         tileClickAudio.play();
@@ -55,7 +65,7 @@ function tileChange(tileDiv) {
         tileDiv.classList.remove("empty");
         tileDiv.classList.add(whichPlayerTurn());
         checkWin();
-        numberOfMoves += 1;
+        game.numberOfMoves += 1;
         updateMessage();
         setHoverText();
     } else return
@@ -63,7 +73,7 @@ function tileChange(tileDiv) {
 
 // The whichPlayer Turn function check which player's move it is currently
 function whichPlayerTurn() {
-    if(numberOfMoves % 2 === 0) {
+    if(game.numberOfMoves % 2 === 0) {
         return "X";
     } else {
         return "O";
@@ -73,8 +83,8 @@ function whichPlayerTurn() {
 // The newGame function resets the board, including the class of the tile divs and the innerHTML to blank
 function newGame() {
     newGameAudio.play();
-    gameOver = false;
-    numberOfMoves = 0;
+    game.gameOver = false;
+    game.numberOfMoves = 0;
     tiles.forEach(element => {
         element.classList = "tile empty";
         element.innerHTML = "";
@@ -104,7 +114,7 @@ function checkWin() {
             winGameAudio.play();
             userMessages.innerHTML = `Player ${whichPlayerTurn()} wins!`;
             updateScore(whichPlayerTurn());
-            gameOver = true;
+            game.gameOver = true;
             tile1.classList.add("winning-tile");
             tile2.classList.add("winning-tile");
             tile3.classList.add("winning-tile");
@@ -112,11 +122,11 @@ function checkWin() {
     });
 
     // check if game is a draw
-    if (numberOfMoves === 8 && gameOver === false) {
+    if (game.numberOfMoves === 8 && game.gameOver === false) {
         winGameAudio.play();
         userMessages.innerHTML = `It's a Tie!`;
         updateScore("Tie");
-        gameOver = true;
+        game.gameOver = true;
     }
 }
 
@@ -133,7 +143,7 @@ function updateScore(player) {
 
 // This function updates the message the user sees regarding who's turn it is
 function updateMessage() {
-    if (gameOver !== true) {
+    if (game.gameOver !== true) {
         userMessages.innerText = `Player ${whichPlayerTurn()}'s turn`;
     }
 }
@@ -153,15 +163,15 @@ function setHoverText() {
 
 // This function enables user to mute and unmute audio
 function mute() {
-    if(muteBool) {  
+    if(game.muteBool) {  
         muteBtnImage.src = "./images/icons8-audio-100.png";
-        muteBool = false;
+        game.muteBool = false;
         tileClickAudio.muted = false;
         winGameAudio.muted = false;
         newGameAudio.muted = false;
-    } else if (!muteBool) {
+    } else if (!game.muteBool) {
         muteBtnImage.src = "./images/icons8-mute-100.png";
-        muteBool = true;
+        game.muteBool = true;
         tileClickAudio.muted = true;
         winGameAudio.muted = true;
         newGameAudio.muted = true;
