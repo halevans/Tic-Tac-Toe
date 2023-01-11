@@ -59,8 +59,9 @@ init();
 ***************
 Functions
 ***************
- */
+*/
 
+// The tileChange function is where the main logic flow of the game occurs, when a tile is pressed
 function tileChange(tileDiv) {
     if (game.gameOver) {
         return
@@ -78,7 +79,7 @@ function tileChange(tileDiv) {
 
 // The whichPlayer Turn function check which player's move it is currently
 function whichPlayerTurn() {
-    if(game.numberOfMoves % 2 === 0) {
+    if (game.numberOfMoves % 2 === 0) {
         return "X";
     } else {
         return "O";
@@ -168,7 +169,7 @@ function setHoverText() {
 
 // This function enables user to mute and unmute audio
 function mute() {
-    if(game.muteBool) {  
+    if (game.muteBool) {  
         muteBtnImage.src = "./images/icons8-audio-100.png";
         game.muteBool = false;
         Object.keys(audioFiles).forEach(audioFile => {
