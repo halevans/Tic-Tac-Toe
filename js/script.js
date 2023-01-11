@@ -7,24 +7,29 @@ const game = {
     gameOver: false
 }
 
-// let game.numberOfMoves;
-// let game.muteBool = false;
-// let game.gameOver = false;
+// Audio files used in game
+const audioFiles = {
+    tileClickAudio: new Audio("./audio/mixkit-video-game-retro-click-237.wav"),
+    newGameAudio: new Audio("./audio/mixkit-click-melodic-tone-1129.wav"),
+    winGameAudio: new Audio("./audio/mixkit-winning-notification-2018.wav")
+}
+
+// Selecting elements in document
 const userMessages = document.querySelector(".message-section p");
 const tiles = document.querySelectorAll(".tile");
 const newGameBtn = document.querySelector("#new-game");
 const resetScoresBtn = document.querySelector("#reset-scores");
 const muteBtn = document.querySelector("#mute");
 const muteBtnImage = document.querySelector("#mute-image");
-const tileClickAudio = new Audio("./audio/mixkit-video-game-retro-click-237.wav");
-const newGameAudio = new Audio("./audio/mixkit-click-melodic-tone-1129.wav");
-const winGameAudio = new Audio("./audio/mixkit-winning-notification-2018.wav");
+// const audioFiles.tileClickAudio = new Audio("./audio/mixkit-video-game-retro-click-237.wav");
+// const audioFiles.newGameAudio = new Audio("./audio/mixkit-click-melodic-tone-1129.wav");
+// const audioFiles.winGameAudio = new Audio("./audio/mixkit-winning-notification-2018.wav");
 
 // audio files used
 // const audioFiles = {
-//     tileClickAudio: "./audio/mixkit-video-game-retro-click-237.wav",
-//     newGameAudio: "./audio/mixkit-click-melodic-tone-1129.wav",
-//     winGameAudio: "./audio/mixkit-winning-notification-2018.wav"
+//     audioFiles.tileClickAudio: "./audio/mixkit-video-game-retro-click-237.wav",
+//     audioFiles.newGameAudio: "./audio/mixkit-click-melodic-tone-1129.wav",
+//     audioFiles.winGameAudio: "./audio/mixkit-winning-notification-2018.wav"
 // }
 // loops through the audioFiles object and creates a variable for each key value pair
 // Object.keys(audioFiles).forEach(element => {
@@ -60,7 +65,7 @@ function tileChange(tileDiv) {
     if (game.gameOver) {
         return
     } else if (tileDiv.classList.contains("empty")) {
-        tileClickAudio.play();
+        audioFiles.tileClickAudio.play();
         tileDiv.innerHTML = whichPlayerTurn();
         tileDiv.classList.remove("empty");
         tileDiv.classList.add(whichPlayerTurn());
@@ -82,7 +87,7 @@ function whichPlayerTurn() {
 
 // The newGame function resets the board, including the class of the tile divs and the innerHTML to blank
 function newGame() {
-    newGameAudio.play();
+    audioFiles.newGameAudio.play();
     game.gameOver = false;
     game.numberOfMoves = 0;
     tiles.forEach(element => {
@@ -111,7 +116,7 @@ function checkWin() {
 
         // check if the board has a winning combination as defined in winCombinations
         if (tile1.classList.contains(whichPlayerTurn()) && tile2.classList.contains(whichPlayerTurn()) && tile3.classList.contains(whichPlayerTurn())) {
-            winGameAudio.play();
+            audioFiles.winGameAudio.play();
             userMessages.innerHTML = `Player ${whichPlayerTurn()} wins!`;
             updateScore(whichPlayerTurn());
             game.gameOver = true;
@@ -123,7 +128,7 @@ function checkWin() {
 
     // check if game is a draw
     if (game.numberOfMoves === 8 && game.gameOver === false) {
-        winGameAudio.play();
+        audioFiles.winGameAudio.play();
         userMessages.innerHTML = `It's a Tie!`;
         updateScore("Tie");
         game.gameOver = true;
@@ -166,14 +171,14 @@ function mute() {
     if(game.muteBool) {  
         muteBtnImage.src = "./images/icons8-audio-100.png";
         game.muteBool = false;
-        tileClickAudio.muted = false;
-        winGameAudio.muted = false;
-        newGameAudio.muted = false;
+        Object.keys(audioFiles).forEach(audioFile => {
+            audioFiles[audioFile].muted = false;
+        });
     } else if (!game.muteBool) {
         muteBtnImage.src = "./images/icons8-mute-100.png";
         game.muteBool = true;
-        tileClickAudio.muted = true;
-        winGameAudio.muted = true;
-        newGameAudio.muted = true;
+        Object.keys(audioFiles).forEach(audioFile => {
+            audioFiles[audioFile].muted = true;
+        });
     }
 }
