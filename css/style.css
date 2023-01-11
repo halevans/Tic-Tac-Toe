@@ -169,3 +169,11 @@ p {
 @keyframes textgrow {
     50% {font-size: 80px;}
 }
+
+/* Responsive Design */
+/* Small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: larger;
+    }
+}
