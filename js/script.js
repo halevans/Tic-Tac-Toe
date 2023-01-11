@@ -54,7 +54,7 @@ function tileChange(tileDiv) {
         tileDiv.classList.remove("empty");
         tileDiv.classList.add(whichPlayerTurn());
         checkWin();
-        game.numberOfMoves += 1;
+        game.numberOfMoves += 1; // this needs to be prior to updateMessage() and setHoverText()
         updateMessage();
         setHoverText();
     } else return
@@ -111,7 +111,7 @@ function checkWin() {
     });
 
     // check if game is a draw
-    if (game.numberOfMoves === 8 && game.gameOver === false) {
+    if (game.numberOfMoves === 8 && game.gameOver === false) { // there will be 8 moves once all the tiles have been used
         audioFiles.winGameAudio.play();
         userMessages.innerHTML = `It's a Tie!`;
         updateScore("Tie");
