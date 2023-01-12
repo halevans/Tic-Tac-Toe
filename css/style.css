@@ -174,7 +174,6 @@ p {
 /* Small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     body {
-        background-color: pink;
-        font-size: 50px;
+        font-size: 80px;
     }
 }
