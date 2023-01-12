@@ -100,27 +100,32 @@ A wireframe for the index page for the MVP was drawn up using Balsamiq Wireframe
 
 ## Build/Code Process
 
-### Planning phase:
-- The key to the planning phase was to identify the MVP design using the User Stories outlined in Section
-- The planning phase was intended to:
-    1. design the interface for the user, specifically what the user needs and what fits the requirements
-    2. come up with a solution that satisfys the MVP
-- Wireframing was used to define a basic UI to give a layout to design the first pass of HTML and CSS code
-- Psuedocode was used to think critically about the requirements and break them down into small steps
+- Planning phase:
+    - The key to the planning phase was to identify the MVP design using the User Stories outlined in Section
+    - The planning phase was intended to:
+        1. design the interface for the user, specifically what the user needs and what fits the requirements
+        2. come up with a solution that satisfys the MVP
+    - Wireframing was used to define a basic UI to give a layout to design the first pass of HTML and CSS code
+    - Psuedocode was used to think critically about the requirements and break them down into small steps
 
-### MVP coding phase:
-- Basic HTML was coded to resemble the wireframe designed in the planning phase
-- This was folled up with basic CSS
-- Javascript was then coded in the following order:
-    1. A basic `Init()` function was created to initialise the app
-    2. A `tileChange()` function was also created to give basic functionality for when a user clicks on a tile
-    3. a `whichPlayerTurn()` function was created to determine who's turn it was
+- MVP coding phase:
+    - Basic HTML was coded to resemble the wireframe designed in the planning phase
+    - This was folled up with basic CSS
+    - Javascript was then coded in the following order:
+        1. Global variables were created for ease of MVP coding. These were later changed to be within an object to improve best practices
+        2. A basic `Init()` function was created to initialise the app
+        3. A `tileChange()` function was also created to give basic functionality for when a user clicks on a tile
+        4. Further functions including `whichPlayerTurn()`, to determine who's turn it was, `checkWin()` to determine if a tile change had resulted in a winning combination, were created
 
-### Refactoring of MVP
+- Refactoring of MVP
+    - Once a working MVP had been created, the code was reviewed to be made more simple, easier to read, and superfluous code removed
 
-### Bonus features
+- Bonus features
+    - Further functions including `updateScore()`, `setHoverText()` and `mute()` were created to add bonus functionality to the applicaiton
 
 ### Challenges
+
+
 
 ### Wins
 
