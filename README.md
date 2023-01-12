@@ -89,9 +89,9 @@ A wireframe for the index page for the MVP was drawn up using Balsamiq Wireframe
 
 - A game object
 - New game funciton
-- Function Init() to initialise game:
+- Function `Init()` to initialise game:
     - Create constants for the queryselectors
-- html grid layout and id numbers as follows:
+- HTML grid layout and id numbers as follows:
     - 1 | 2 | 3  
     \--------  
     4 | 5 | 6  
@@ -154,7 +154,7 @@ None known to date.
         1. Easy AI based off randomly chosen tile that is still empty
         2. Hard AI which uses an algorithm to choose the optimum tile to choose to avoid player from winning game
     - Improve UI for mobile users
-    - Allow 2 players to play online with each other using any means such as WebSockets, Firebase, or other 3rd-party services.
+    - Allow 2 players to play online with each other using any means such as WebSockets, Firebase, or other 3rd-party services
 
 ## Outstanding Queries
 
