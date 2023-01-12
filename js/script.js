@@ -149,7 +149,7 @@ function setHoverText() {
                 tile.classList.add(`${whichPlayerTurn()}-hover`); // if tile is empty, add X-hover or O-hover
             }
         } else if (game.gameOver) {
-            tile.classList.remove("empty"); // if gameOver then remove empty class so hover effect no longer occurs
+            tile.classList.remove("empty"); // if gameOver then remove empty class so hover effect no longer occurs on empty tiles
         }
     });
 }
