@@ -1,13 +1,10 @@
 # Tic-Tac-Toe
 
-DO!!!
-A link to your hosted working game in the URL section of your Github repository
-
 ## Description
 
-??? Google Tic Tac Toe description ???
+Tic-tac-toe is a game for two players who take turns marking the spaces in a three-by-three grid with X or O.
 
-The primary aim of the Tic-Tac-Toe game is to put into practice the knowledge of HTML, CSS and JavaScript learned in the SEI programme in Unit 1.
+The primary aim of the Tic-Tac-Toe project is to put into practice the knowledge of HTML, CSS and JavaScript learned in the SEI programme in Unit 1.
 
 ## Deployment link
 
@@ -18,7 +15,7 @@ https://halevans.github.io/Tic-Tac-Toe/
 - Langauges used:
     - Vanilla Javascript
     - CSS
-    - html ???should this be capitalised???
+    - HTML
 - Developer Tools:
     - Command Line, Visual Studio Code, Google Chrome Developer Tools
 - Code versioning and control tools:
@@ -103,11 +100,25 @@ A wireframe for the index page for the MVP was drawn up using Balsamiq Wireframe
 
 ## Build/Code Process
 
-- Planning Phase:
-    - The key to the planning phase was to identify the MVP design using the User Stories outlined in Section
-    - This was designed to
-    (i) design the interface for the user, specifically what the user needs and what fits the requirements
-    - 
+### Planning phase:
+- The key to the planning phase was to identify the MVP design using the User Stories outlined in Section
+- The planning phase was intended to:
+    1. design the interface for the user, specifically what the user needs and what fits the requirements
+    2. come up with a solution that satisfys the MVP
+- Wireframing was used to define a basic UI to give a layout to design the first pass of HTML and CSS code
+- Psuedocode was used to think critically about the requirements and break them down into small steps
+
+### MVP coding phase:
+- Basic HTML was coded to resemble the wireframe designed in the planning phase
+- This was folled up with basic CSS
+- Javascript was then coded in the following order:
+    1. A basic `Init()` function was created to initialise the app
+    2. A `tileChange()` function was also created to give basic functionality for when a user clicks on a tile
+    3. a `whichPlayerTurn()` function was created to determine who's turn it was
+
+### Refactoring of MVP
+
+### Bonus features
 
 ### Challenges
 
