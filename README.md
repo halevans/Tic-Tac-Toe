@@ -1,6 +1,11 @@
 # Tic-Tac-Toe
 
+DO!!!
+A link to your hosted working game in the URL section of your Github repository
+
 ## Description
+
+??? Google Tic Tac Toe description ???
 
 The primary aim of the Tic-Tac-Toe game is to put into practice the knowledge of HTML, CSS and JavaScript learned in the SEI programme in Unit 1.
 
@@ -13,11 +18,13 @@ https://halevans.github.io/Tic-Tac-Toe/
 - Langauges used:
     - Vanilla Javascript
     - CSS
-    - html
+    - html ???should this be capitalised???
 - Developer Tools:
     - Command Line, Visual Studio Code, Google Chrome Developer Tools
 - Code versioning and control tools:
     - Git and GitHub
+- Deployment:
+    [GitHub Pages](https://pages.github.com/) was used for deploying the project
 - Wireframing and Design Tools:
     - Balsamiq Wireframes
     - Patternpad
@@ -83,6 +90,7 @@ A wireframe for the index page for the MVP was drawn up using Balsamiq Wireframe
 
 ### Psuedocode
 
+- A game object
 - New game funciton
 - Function Init() to initialise game:
     - Create constants for the queryselectors
@@ -95,7 +103,11 @@ A wireframe for the index page for the MVP was drawn up using Balsamiq Wireframe
 
 ## Build/Code Process
 
-
+- Planning Phase:
+    - The key to the planning phase was to identify the MVP design using the User Stories outlined in Section
+    - This was designed to
+    (i) design the interface for the user, specifically what the user needs and what fits the requirements
+    - 
 
 ### Challenges
 
@@ -117,6 +129,7 @@ None known to date.
 ## Future Improvements
 
 - Current features:
+    - Use and strictly follow a style guide (for example [Airbnb's](https://github.com/airbnb/javascript#types))
     - Reduce/eliminate the need for global variables
 - Additional features:
     - Customisable tokens for players (e.g. name, icon, picture)
@@ -126,3 +139,7 @@ None known to date.
         2. Hard AI which uses an algorithm to choose the optimum tile to choose to avoid player from winning game
     - Improve UI for mobile users
     - Allow 2 players to play online with each other using any means such as WebSockets, Firebase, or other 3rd-party services.
+
+## Outstanding Queries
+
+- In the context of this game, what is the best way to set it up? Is it for instance a Class? Or is an object (i.e. with globally accessible variables) also good practice?
