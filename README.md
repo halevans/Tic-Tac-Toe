@@ -77,24 +77,21 @@ https://halevans.github.io/Tic-Tac-Toe/
 
 ### Wireframe
 
-A wireframe for the index page for the MVP was drawn up using Balsamiq Wireframes
+A wireframe for the index page for the MVP was drawn up using Balsamiq Wireframes:
 
 ![Wireframe for index.html](/images/Index.png)
 
 ### Psuedocode
 
 - New game funciton
-
 - Function Init() to initialise game:
     - Create constants for the queryselectors
-
 - html grid layout and id numbers as follows:
     - 1 | 2 | 3  
     \--------  
     4 | 5 | 6  
     \--------  
     7 | 8 | 9  
-
 
 ## Build/Code Process
 
@@ -109,6 +106,13 @@ A wireframe for the index page for the MVP was drawn up using Balsamiq Wireframe
 ### Bugs
 
 None known to date.
+
+## Final Product
+
+![Final product in desktop web browser](/images/Final-product-desktop.png)
+
+![Final producted winning state in desktop web browser](/images/Final-product-desktop-winning-state.png)
+
 
 ## Future Improvements
 
