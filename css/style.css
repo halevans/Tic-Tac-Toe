@@ -175,6 +175,6 @@ p {
 @media only screen and (max-width: 600px) {
     body {
         background-color: pink;
-        font-size: larger;
+        font-size: 50px;
     }
 }
