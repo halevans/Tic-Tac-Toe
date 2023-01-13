@@ -47,17 +47,18 @@ function init() {
 // The tileChange function is where the main logic flow of the game occurs, when a tile is pressed
 function handleTileClick(tileDiv) {
     if (game.gameOver) {
-        return
+        return;
     } else if (tileDiv.classList.contains("empty")) {
         audioFiles.tileClickAudio.play();
         tileDiv.innerHTML = whichPlayerTurn();
         tileDiv.classList.remove("empty");
         tileDiv.classList.add(whichPlayerTurn());
         checkWin();
+        checkDraw();
         game.numberOfMoves += 1; // this needs to be prior to updateMessage() and setHoverText()
         updateMessage();
         setHoverText();
-    } else return
+    }
 }
 
 // The whichPlayer Turn function check which player's move it is currently
@@ -82,6 +83,7 @@ function newGame() {
     setHoverText();
 }
 
+// This function refreshes the page to reset the scores (so long as the user confirms this)
 function resetScores() {
     if(confirm("Are you sure you want to reset the scores?")){
         location.reload();
@@ -116,8 +118,10 @@ function checkWin() {
             tile3.classList.add("winning-tile");
         }
     });
+}
 
-    // check if game is a draw
+// Function to check if game is a draw
+function checkDraw() {
     if (game.numberOfMoves === 8 && game.gameOver === false) { // there will be 8 moves once all the tiles have been used
         audioFiles.winGameAudio.play();
         userMessages.innerHTML = `It's a Tie!`;
