@@ -46,19 +46,23 @@ function init() {
 
 // The tileChange function is where the main logic flow of the game occurs, when a tile is pressed
 function handleTileClick(tileDiv) {
-    if (game.gameOver) {
-        return;
-    } else if (tileDiv.classList.contains("empty")) {
+    if (game.gameOver) return;
+    if (tileDiv.classList.contains("empty")) {
         audioFiles.tileClickAudio.play();
-        tileDiv.innerHTML = whichPlayerTurn();
-        tileDiv.classList.remove("empty");
-        tileDiv.classList.add(whichPlayerTurn());
+        updateTile(tileDiv);
         checkWin();
         checkDraw();
         game.numberOfMoves += 1; // this needs to be prior to updateMessage() and setHoverText()
         updateMessage();
         setHoverText();
     }
+}
+
+// The updateTile function updates the tile after a normal (i.e. not game ending) move
+function updateTile(tileDiv) {
+    tileDiv.innerHTML = whichPlayerTurn();
+    tileDiv.classList.remove("empty");
+    tileDiv.classList.add(whichPlayerTurn());
 }
 
 // The whichPlayer Turn function check which player's move it is currently
