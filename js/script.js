@@ -32,20 +32,20 @@ function init() {
     console.log("Welcome to Tic Tac Toe");
 
     // Setup event listeners
-    newGameBtn.addEventListener("click", e => newGame());
-    resetScoresBtn.addEventListener("click", e => location.reload());
-    tiles.forEach(element => {
-        element.addEventListener("click", e => tileChange(e.target));
+    newGameBtn.addEventListener("click", newGame);
+    resetScoresBtn.addEventListener("click", resetScores);
+    tiles.forEach(tile => {
+        tile.addEventListener("click", e => handleTileClick(e.target));
     });
-    muteBtn.addEventListener("click", e => mute());
+    muteBtn.addEventListener("click", toggleMute);
     
     // Initialises a new game for the first time
     newGame();
-    mute() // remove later -- muting to avoid sounds playing all the time when building!
+    toggleMute() // remove later -- muting to avoid sounds playing all the time when building!
 }
 
 // The tileChange function is where the main logic flow of the game occurs, when a tile is pressed
-function tileChange(tileDiv) {
+function handleTileClick(tileDiv) {
     if (game.gameOver) {
         return
     } else if (tileDiv.classList.contains("empty")) {
@@ -80,6 +80,12 @@ function newGame() {
     });
     updateMessage();
     setHoverText();
+}
+
+function resetScores() {
+    if(confirm("Are you sure you want to reset the scores?")){
+        location.reload();
+    }
 }
 
 // The checkWin function checks to see whether the current selection on the board yields a win for a player or a tie
@@ -155,7 +161,7 @@ function setHoverText() {
 }
 
 // This function enables user to mute and unmute audio
-function mute() {
+function toggleMute() {
     if (game.muteBool) {  
         muteBtnImage.src = "./images/icons8-audio-100.png";
         game.muteBool = false;

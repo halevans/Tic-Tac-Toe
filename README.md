@@ -69,11 +69,11 @@ https://halevans.github.io/Tic-Tac-Toe/
 ### Gold, silver, bronze planning for MVP
 
 - Bronze:
-    - An HTML page with a table of 9 cells.
+    - An HTML page with a table of 9 cells
     - Just enough Javascript to show you who the current player is and change the background color of a cell when you click on it
-    - Just enough CSS to make the cells visible.
+    - Just enough CSS to make the cells visible
 - Silver:
-    - Enough CSS to make it actually look like a game, and enough Javascript for a "New Game" and "Reset" button.
+    - Enough CSS to make it actually look like a game, and enough Javascript for a "New Game" and "Reset" button
 - Gold:
     - CSS transitions or animations, showing "X" and "O" instead of colors, and Javascript that tells you when the game is over and who won
     - When user hovers over the cell, change cell colour
@@ -85,12 +85,6 @@ A wireframe for the index page for the MVP was drawn up using Balsamiq Wireframe
 
 ![Wireframe for index.html](/images/Index.png)
 
-### Psuedocode
-
-- A game object
-- New game function
-- Function `Init()` to initialise game:
-    - Create constants for the queryselectors
 - HTML grid layout and id numbers as follows:
     - 1 | 2 | 3  
     \--------  
@@ -117,10 +111,10 @@ A wireframe for the index page for the MVP was drawn up using Balsamiq Wireframe
         3. A `tileChange()` function was also created to give basic functionality for when a user clicks on a tile
         4. Further functions including `whichPlayerTurn()`, to determine who's turn it was, `checkWin()` to determine if a tile change had resulted in a winning combination, were created
 
-- Refactoring of MVP
+- Refactoring of MVP:
     - Once a working MVP had been created, the code was reviewed to be made more simple, easier to read, and superfluous code removed
 
-- Bonus features
+- Bonus features:
     - Further functions including `updateScore()`, `setHoverText()` and `mute()` were created to add bonus functionality to the application
 
 ### Challenges
