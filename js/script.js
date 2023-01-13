@@ -102,9 +102,9 @@ function checkWin() {
     ];
 
     winCombinations.forEach(wincombo => {
-        let tile1 = document.querySelector("#tile"+wincombo[0]);
-        let tile2 = document.querySelector("#tile"+wincombo[1]);
-        let tile3 = document.querySelector("#tile"+wincombo[2]);
+        let tile1 = document.querySelector(`#tile${wincombo[0]}`);
+        let tile2 = document.querySelector(`#tile${wincombo[1]}`);
+        let tile3 = document.querySelector(`#tile${wincombo[2]}`);
 
         // check if the board has a winning combination as defined in winCombinations
         if (tile1.classList.contains(whichPlayerTurn()) && tile2.classList.contains(whichPlayerTurn()) && tile3.classList.contains(whichPlayerTurn())) {

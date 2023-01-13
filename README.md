@@ -179,6 +179,18 @@ The tiles change colour and demonstrate a translucent X or O when a player hover
 ## Outstanding Queries
 
 - In the context of this game, what is the best way to set it up? Is it for instance a Class? Or is an object (i.e. with globally accessible variables) also good practice?
+- For example:
+```
+class Game {
+    constructor() {
+        this.numberOfMoves = 0;
+        this.muteBool = false;
+        this.gameOver = false;
+    }
+    // other game related methods
+}
+const game = new Game();
+```
 - Further to the above,  would this be better practice than what is defined already?:
 ```
 const gameState = {
