@@ -177,8 +177,8 @@ The tiles change colour and demonstrate a translucent X or O when a player hover
     - Customisable tokens for players (e.g. name, icon, picture)
     - localStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity
     - AI opponent:
-        1. Easy AI based off randomly chosen tile that is still empty
-        2. Hard AI which uses an algorithm to choose the optimum tile to choose to avoid player from winning game
+        1. Easy AI based off a simple algorithm, like a random number generator, to determine the AI's next move. For example, one could randomly select an empty tile from the `tiles` array and call the `tileChange()` function with the selected tile as an argument.
+        2. Hard AI which uses a more complex algorithm like the Minimax algorithm to choose the optimum tile. The minimax algorithm calculates the best move for the computer, by evaluating all the possible moves and their corresponding outcomes.
     - Improve UI for mobile users
     - Allow 2 players to play online with each other using any means such as WebSockets, Firebase, or other 3rd-party services
 
