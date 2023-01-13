@@ -126,7 +126,7 @@ A wireframe for the index page for the MVP was drawn up using Balsamiq Wireframe
 ### Noteworthy Functions
 #### `setHoverText()`
 The `setHoverText()` function allows the user to see a transparent preview of their X or O in the tile when hovered over with the mouse:
-```
+```javascript
 function setHoverText() {
     tiles.forEach(tile => {
         // remove any legacy X-hover or O-hover
@@ -172,7 +172,7 @@ The tiles change colour and demonstrate a translucent X or O when a player hover
         - One could create a `Player` class that takes a name and symbol (e.g. "X" or "O") as arguments:
         - One would also need to update the `whichPlayerTurn()` function to return an instance of the Player class instead of a string
         - For example:
-        ```
+        ```javascript
         class Player {
             constructor(name, symbol) {
                 this.name = name;
@@ -182,7 +182,7 @@ The tiles change colour and demonstrate a translucent X or O when a player hover
         }
         ```
         - One could then create instances of the class for example:
-        ```
+        ```javascript
         const player1 = new Player("Player 1", "X");
         const player2 = new Player("Player 2", "O");
         ```
@@ -197,7 +197,7 @@ The tiles change colour and demonstrate a translucent X or O when a player hover
 
 - In the context of this game, what is the best way to set it up? Is it for instance a Class? Or is an object (i.e. with globally accessible variables) also good practice?
 - For example:
-```
+```javascript
 class Game {
     constructor() {
         this.numberOfMoves = 0;
@@ -209,7 +209,7 @@ class Game {
 const game = new Game();
 ```
 - Further to the above,  would this be better practice than what is defined already?:
-```
+```javascript
 const gameState = {
     numberOfMoves: 0,
     muteBool: false,
