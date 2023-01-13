@@ -94,7 +94,7 @@ function resetScores() {
     }
 }
 
-// The checkWin function checks to see whether the current selection on the board yields a win for a player or a tie
+// The checkWin function checks to see whether the current selection on the board yields a win for a player
 function checkWin() {
     const winCombinations = [
         // Rows
