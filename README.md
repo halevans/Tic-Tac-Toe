@@ -118,7 +118,7 @@ A wireframe for the index page for the MVP was drawn up using Balsamiq Wireframe
     - Further functions including `updateScore()`, `setHoverText()` and `mute()` were created to add bonus functionality to the application
 
 ### Challenges
-- There was some difficulty in determining the best practice for the Javascript. Specifically, whether it would be best practice to use a class (e.g. `TicTacToe` class and then create an instance e.g. `game`) or use a namespace object to containerise the global variable.
+- There was some difficulty in determining the best practice for the Javascript. Specifically, whether it would be best practice to use a class (e.g. `TicTacToe` class and then create an instance e.g. `game`) or use a namespace object to containerise the global variable
 
 ### Wins
 - The `checkWin()` function was pleasing to produce. It took considerable more amount of thinking and preparation time in comparison to the length of the code itself
@@ -168,7 +168,19 @@ The tiles change colour and demonstrate a translucent X or O when a player hover
     - Use and strictly follow a style guide (for example [Airbnb's](https://github.com/airbnb/javascript#types))
     - Reduce/eliminate the need for global variables
 - Additional features:
-    - Customisable tokens for players (e.g. name, icon, picture)
+    - Customisable tokens for players (e.g. name, icon, picture):
+        - One could create a `Player` class that takes a name and symbol (e.g. "X" or "O") as arguments:
+        - One would also need to update the `whichPlayerTurn()` function to return an instance of the Player class instead of a string
+        - For example:
+        ```
+        class Player {
+            constructor(name, symbol) {
+                this.name = name;
+                this.symbol = symbol;
+                this.score = 0;
+            }
+        }
+        ```
     - localStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity
     - AI opponent:
         1. Easy AI based off a simple algorithm, like a random number generator, to determine the AI's next move. For example, one could randomly select an empty tile from the `tiles` array and call the `tileChange()` function with the selected tile as an argument.
