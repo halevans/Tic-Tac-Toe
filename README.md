@@ -12,7 +12,7 @@ https://halevans.github.io/Tic-Tac-Toe/
 
 ## Technologies Used
 
-- Langauges used:
+- Languages used:
     - Vanilla Javascript
     - CSS
     - HTML
@@ -88,7 +88,7 @@ A wireframe for the index page for the MVP was drawn up using Balsamiq Wireframe
 ### Psuedocode
 
 - A game object
-- New game funciton
+- New game function
 - Function `Init()` to initialise game:
     - Create constants for the queryselectors
 - HTML grid layout and id numbers as follows:
@@ -104,13 +104,13 @@ A wireframe for the index page for the MVP was drawn up using Balsamiq Wireframe
     - The key to the planning phase was to identify the MVP design using the User Stories outlined in Section
     - The planning phase was intended to:
         1. design the interface for the user, specifically what the user needs and what fits the requirements
-        2. come up with a solution that satisfys the MVP
+        2. come up with a solution that satisfies the MVP
     - Wireframing was used to define a basic UI to give a layout to design the first pass of HTML and CSS code
     - Psuedocode was used to think critically about the requirements and break them down into small steps
 
 - MVP coding phase:
     - Basic HTML was coded to resemble the wireframe designed in the planning phase
-    - This was folled up with basic CSS
+    - This was followed up with basic CSS
     - Javascript was then coded in the following order:
         1. Global variables were created for ease of MVP coding. These were later changed to be within an object to improve best practices
         2. A basic `Init()` function was created to initialise the app
@@ -121,15 +121,37 @@ A wireframe for the index page for the MVP was drawn up using Balsamiq Wireframe
     - Once a working MVP had been created, the code was reviewed to be made more simple, easier to read, and superfluous code removed
 
 - Bonus features
-    - Further functions including `updateScore()`, `setHoverText()` and `mute()` were created to add bonus functionality to the applicaiton
+    - Further functions including `updateScore()`, `setHoverText()` and `mute()` were created to add bonus functionality to the application
 
 ### Challenges
-
-
+- There was some difficulty in determining the best practice for the Javascript. Specifically, whether it would be best practice to use a class (e.g. `TicTacToe` class and then create an instance e.g. `game`) or use a namespace object to containerise the global variable.
 
 ### Wins
+- The `checkWin()` function was pleasing to produce. It took considerable more amount of thinking and preparation time in comparison to the length of the code itself
+
+### Noteworthy Functions
+#### `setHoverText()`
+The `setHoverText()` function allows the user to see a transparent preview of their X or O in the tile when hovered over with the mouse:
+```
+function setHoverText() {
+    tiles.forEach(tile => {
+        // remove any legacy X-hover or O-hover
+        tile.classList.remove("X-hover");
+        tile.classList.remove("O-hover");
+        if (!game.gameOver) {
+            if (tile.classList.contains("empty")) {
+                tile.classList.add(`${whichPlayerTurn()}-hover`); // if tile is empty, add X-hover or O-hover
+            }
+        } else if (game.gameOver) {
+            tile.classList.remove("empty"); // if gameOver then remove empty class so hover effect no longer occurs on empty tiles
+        }
+    });
+}
+```
+Initially, and legacy X-hover or O-hover classes are removed from the tile div. Subsequently, the function adds either X-hover or O-hover, depending on which player's move it is, to the tile only if the class list also contains empty. In other words, if the tile has not yet been used and is thus empty, it will assign a hover class. If the game is already over (denoted by `game.gameOver = false`), then the function will remove the empty class from the tiles, such that any hover effects do not occur.
 
 ### Key Learnings/Takeaways
+- Sometimes it is not worth spending too much time thinking about how to write the code, and instead actually write the code and then come back to improve it. A fair quantity of time was not utilised to it's best: instead, time was somewhat wasted in researching the 'optimum' method to write the code. While it is good to write it in the best possible form, when starting out, it is important not to get too carried away with this.
 
 ### Bugs
 
@@ -137,10 +159,14 @@ None known to date.
 
 ## Final Product
 
+User interface:
 ![Final product in desktop web browser](/images/Final-product-desktop.png)
 
-![Final producted winning state in desktop web browser](/images/Final-product-desktop-winning-state.png)
+Demonstrating the winning interface -- the winning tiles bulge:
+![Final produced winning state in desktop web browser](/images/Final-product-desktop-winning-state.png)
 
+The tiles change colour and demonstrate a translucent X or O when a player hovers over a potential tile:
+![Final produced player hover](/images/Final-product-hover.png)
 
 ## Future Improvements
 
@@ -159,3 +185,22 @@ None known to date.
 ## Outstanding Queries
 
 - In the context of this game, what is the best way to set it up? Is it for instance a Class? Or is an object (i.e. with globally accessible variables) also good practice?
+- Further to the above,  would this be better practice than what is defined already?:
+```
+const gameState = {
+    numberOfMoves: 0,
+    muteBool: false,
+    gameOver: false,
+    audioFiles: {
+        tileClickAudio: new Audio("./audio/mixkit-video-game-retro-click-237.wav"),
+        newGameAudio: new Audio("./audio/mixkit-click-melodic-tone-1129.wav"),
+        winGameAudio: new Audio("./audio/mixkit-winning-notification-2018.wav")
+    },
+    userMessages: document.querySelector(".message-section p"),
+    tiles: document.querySelectorAll(".tile"),
+    newGameBtn: document.querySelector("#new-game"),
+    resetScoresBtn: document.querySelector("#reset-scores"),
+    muteBtn: document.querySelector("#mute"),
+    muteBtnImage: document.querySelector("#mute-image"),
+}
+```
